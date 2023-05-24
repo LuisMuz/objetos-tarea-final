@@ -1,13 +1,15 @@
 package uaslp.objetos.figuras;
 
+import uaslp.objetos.exception.AlturaNoProvistaException;
+import uaslp.objetos.exception.BaseNoProvistaException;
+import uaslp.objetos.exception.DatoFaltanteException;
+
 public class Triangulo extends Figura{
     private double base;
     private double altura;
 
     public Triangulo(){
-        super("Triangulo","Cualquier triangulo");
-        base = 0;
-        altura = 0;
+        this("Triangulo","Cualquier triangulo");
     }
 
     public Triangulo(String name, String description){
@@ -37,7 +39,9 @@ public class Triangulo extends Figura{
         return altura;
     }
 
-    public double getArea() {
+    public double getArea() throws DatoFaltanteException {
+        if(base == 0) throw new BaseNoProvistaException();
+        if(altura == 0) throw new AlturaNoProvistaException();
         return (base * altura) / 2;
     }
 

@@ -1,5 +1,7 @@
 package uaslp.objetos.figuras;
 
+import uaslp.objetos.exception.NumeroInvalidoDeLados;
+
 import static java.lang.Math.tan;
 import static java.lang.Math.toRadians;
 
@@ -9,6 +11,8 @@ public class PoligonoRegular extends Figura{
 
     public PoligonoRegular(int lados) {
         super("Poligono Regular","Poligono");
+        if(lados < 5) throw new NumeroInvalidoDeLados
+                ("Número de lados válido a partir de 5");
         this.lados = lados;
     }
 
