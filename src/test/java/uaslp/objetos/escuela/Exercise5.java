@@ -15,7 +15,7 @@ public class Exercise5 {
     public void testAdapter() {
         // Given:
         String listaDeCalificaciones = "8.7,8.5,9.4,9.8,6.4,10,10,8.9,9.8,8";
-        EvaluadorDePromedios evaluadorDePromedios = mock(EvaluadorDePromedios.class);
+        EvaluadorDePromedios evaluadorDePromedios = Mockito.mock(EvaluadorDePromedios.class);
         EvaluadorDePromediosAdapter evaluadorDePromediosAdapter = new EvaluadorDePromediosAdapter(evaluadorDePromedios);
         List<Double> calificaciones = Arrays.asList(8.7, 8.5, 9.4, 9.8, 6.4, 10.0, 10.0, 8.9, 9.8, 8.0);
 
