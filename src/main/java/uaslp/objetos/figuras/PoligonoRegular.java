@@ -3,11 +3,12 @@ package uaslp.objetos.figuras;
 import static java.lang.Math.tan;
 import static java.lang.Math.toRadians;
 
-public class PoligonoRegular {
+public class PoligonoRegular extends Figura{
     private final int lados;
     private double lado;
 
     public PoligonoRegular(int lados) {
+        super("Poligono Regular","Poligono");
         this.lados = lados;
     }
 
@@ -37,5 +38,10 @@ public class PoligonoRegular {
         theta = toRadians(theta);
         return lado/(2*tan(theta));
 
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("■");
     }
 }

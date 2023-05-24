@@ -1,9 +1,10 @@
 package uaslp.objetos.figuras;
 
-public class Cuadrado {
+public class Cuadrado extends Figura{
     private double lado;
 
     public Cuadrado(){
+        super("Cuadrado","Lados iguales");
         lado = 0;
     }
 
@@ -20,7 +21,13 @@ public class Cuadrado {
     public double getLado(){
         return lado;
     }
+
     public double getArea() {
         return lado*lado;
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("■");
     }
 }
